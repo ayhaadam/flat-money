@@ -1,0 +1,18 @@
+<% provide(:bodyclass, "expense") %>
+<div class="container-fluid animated fadeInDown">
+	<div id="header" class="clearfix">
+		帳戶總覽
+		<div class="pull-left">
+			<%= link_to "Back", { :controller => "home", :action => "home" }, :class => "btn btn-info btn-mini" %>
+		</div>
+	</div>
+	<ul>
+		<li class="type">現金</li>
+		<a href=""><li>現金<span class="pull-right">$1,000</span></li></a>	
+		<li class="type">信用卡</li>
+		<li>兆豐<span class="pull-right">- $2,000</span></li>
+		<li class="type">銀行帳戶</li>
+		<li>玉山銀行<span class="pull-right">$2,000</span></li>
+		<li>兆豐銀行<span class="pull-right">$3,000</span></li>
+	</ul>
+</div>
