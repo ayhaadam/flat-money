@@ -1,0 +1,27 @@
+<% provide(:bodyclass, "account-new") %>
+<div class="container-fluid animated fadeInDown">
+	<div id="header" class="clearfix">
+		新增帳戶
+		<div class="pull-left">
+			<%= link_to "Cancle", { :controller => "account", :action => "index" }, :class => "btn btn-info btn-mini" %>
+		</div>
+	</div>
+    <form>
+		<div class="control-group">
+		  <input type="text" placeholder="帳戶名稱">
+		</div>
+		
+		<div class="control-group">
+		  <select value="X-Men" class="span3" tabindex="1" name="herolist" style="">
+            <option value="0">Choose hero</option>
+            <option value="1">Spider Man</option>
+            <option value="2">Wolverine</option>
+            <option value="3">Captain America</option>
+            <option value="X-Men" selected="selected">X-Men</option>
+            <option value="Crocodile">Crocodile</option>
+          </select>
+		</div>
+		
+		<a class="btn btn-primary btn-large btn-block" href="#">Login</a>
+    </form>
+</div>

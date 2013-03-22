@@ -129,6 +129,18 @@ body.expense {
 	}
 }
 
+body.account-new {
+	.container-fluid {
+		background-color: $green;
+	}
+	form {
+		padding: 20px;
+		input[type="text"] {
+			width: 95%;
+		}
+	}
+}
+
 @media (min-width: 768px) { 
 
 .container-fluid {
