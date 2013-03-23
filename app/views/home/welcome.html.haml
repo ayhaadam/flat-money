@@ -1,0 +1,9 @@
+:erb
+	<% javascript "welcome" %>
+	<% provide(:bodyclass, "index") %>
+
+#welcome
+	%h1#title Flat Money
+
+:javascript
+	$("#title").fitText();
