@@ -29,7 +29,7 @@
     // HTML template for the dropdowns
     dropdownTemplate = [
       '<div class="dk_container {{ classname }}" id="dk_container_{{ id }}" tabindex="{{ tabindex }}">',
-        '<a class="dk_toggle">',
+        '<a href="#" class="dk_toggle">',
           '<span class="dk_label">{{ label }}</span>',
           '<span class="select-icon"></span>',
         '</a>',
@@ -41,7 +41,7 @@
     ].join(''),
 
     // HTML template for dropdown options
-    optionTemplate = '<li class="{{ current }}"><a data-dk-dropdown-value="{{ value }}">{{ text }}</a></li>',
+    optionTemplate = '<li class="{{ current }}"><a href="#" data-dk-dropdown-value="{{ value }}">{{ text }}</a></li>',
 
     // Some nice default values
     defaults = {
