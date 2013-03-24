@@ -105,7 +105,7 @@ body.home {
 	}
 }
 
-body.expense {
+body.account {
 	.container-fluid {
 		background-color: $green;
 	}
@@ -120,7 +120,7 @@ body.expense {
 			padding: 20px 10px;
 			font-size: 18px;
 		}
-		li.type {
+		li.type-title {
 			padding: 3px 10px;
 			color: white;
 			background-color: rgba(0, 0, 0, 0.1);

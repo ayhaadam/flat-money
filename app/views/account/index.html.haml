@@ -1,0 +1,36 @@
+:erb
+	<% provide(:bodyclass, "account") %>
+
+.container-fluid.animated.fadeInDown
+	#header.classfix
+		帳戶總覽
+		.pull-left
+			= link_to "Back", home_index_path , { :class => "btn btn-mini btn-info" }
+		.pull-right
+			= link_to "Add", new_account_path , { :class => "btn btn-mini btn-info" }
+	%ul
+		%li.type-title 現金
+		%a
+			%li.type-cash 
+				現金
+				.pull-right $1,000
+		%li.type-title信用卡
+		%a
+			%li.type-credit-card
+				兆豐
+				.pull-right $1,000
+		%li.type-title 銀行帳戶
+		%a
+			%li.type-bank
+				玉山銀行
+				.pull-right $1,000
+		%a
+			%li.type-bank
+				兆豐銀行
+				.pull-right $1,000
+		%li.type-title 電子貨幣
+		%a
+			%li.type-emoney
+				悠游卡
+				.pull-right $1,000
+
