@@ -6,22 +6,26 @@
 		新增帳戶
 		.pull-left
 			= link_to "Cancle", account_index_path , { :class => "btn btn-mini btn-info" }
-	%form
-		.control-group
-			%select
-				%option 帳戶種類
-				%option 現金
-				%option 信用卡
-				%option 銀行帳戶
-				%option 電子貨幣
 
-		.control-group
-			%input{ :type => "text", :placeholder => "帳戶名稱" }
+	- if @account.errors.any?
+		%ul#error
+			- @account.errors.each do |attr,msg|
+				%li= msg
 
+	= form_for @account, :url => { :action => "create" } do |f|
+		.control-group= f.select( :account_type , [["帳戶類型", ""],["現金", "cash"], ["信用卡", "credit_card"], ["銀行帳戶", "bank"], ["電子貨幣", "emoney"]])
+		.control-group= f.text_field :name, :placeholder => "帳戶名稱"
+		.control-group= f.text_field :balance, :placeholder => "帳戶餘額", :pattern => "\\d*"
 		.control-group
-			%input{ :type => "text", :pattern => "\\d*", :placeholder => "帳戶餘額" }
-
-		%a.btn.btn-primary.btn-large.btn-block 新增
+			%span.pull-left.for-toggle
+				列為存款？
+			.pull-right	
+				.toggle.toggle-icon.toggle-off
+					%label.toggle-radio.fui-checkmark-16{ :for => "account_not_count_1" }
+					= f.radio_button :not_count, 1
+					%label.toggle-radio.fui-cross-16{ :for => "account_not_count_0" }
+					= f.radio_button :not_count, 0, :checked => "checked"
+		.control-group= f.submit "送出", :class => "btn btn-primary btn-large btn-block"
 
 :javascript
 	$("select").dropkick();

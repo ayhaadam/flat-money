@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require jquery.fittext.js
 //= require jquery.dropkick
+//= require custom_checkbox_and_radio
+//= require custom_radio
 
 window.addEventListener('load', function() {
     new FastClick(document.body);

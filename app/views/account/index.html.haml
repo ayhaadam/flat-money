@@ -22,7 +22,7 @@
 			%li.type-title 銀行帳戶
 			- @credit_card_accounts.each do |credit_card|
 				%a{ :href => edit_account_path(credit_card.id) }
-					%li.type-credit_card
+					%li.type-credit-card
 						=credit_card.name
 						.pull-right
 							$

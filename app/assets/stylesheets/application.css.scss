@@ -161,6 +161,12 @@ body.account-edit, {
 	.container-fluid {
 		background-color: $green;
 	}
+	ul#error {
+		margin: 0;
+		margin-top: 15px;
+		list-style: none;
+		text-align: center;
+	}
 	form {
 		padding: 20px;
 		input[type="text"] {
@@ -188,6 +194,12 @@ body.account-edit, {
 		textarea {
 			width: 96%;
 			height: 100px;
+		}
+		span.for-toggle {
+			line-height: 29px;
+		}
+		.toggle {
+			margin-right: 0;
 		}
 	}
 }

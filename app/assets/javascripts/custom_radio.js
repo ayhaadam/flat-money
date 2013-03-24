@@ -14,10 +14,14 @@ var toggleHandler = function(toggle) {
 
     radio.eq(0).click(function() {
         $(toggle).toggleClass("toggle-off");
+        $(this).removeAttr("checked");
+        $(radio).eq(1).attr("checked", "checked");
     });
 
     radio.eq(1).click(function() {
         $(toggle).toggleClass("toggle-off");
+        $(this).removeAttr("checked")
+        $(radio).eq(0).attr("checked", "checked");
     });
 };
 
