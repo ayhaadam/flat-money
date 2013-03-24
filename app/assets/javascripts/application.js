@@ -21,18 +21,22 @@ window.addEventListener('load', function() {
     new FastClick(document.body);
 }, false);
 
-// $( document ).on(
-// "click",
-// "a[href]",
-// function( event ){
- 
-// // Stop the default behavior of the browser, which
-// // is to change the URL of the page.
-// event.preventDefault();
- 
-// // Manually change the location of the page to stay in
-// // "Standalone" mode and change the URL at the same time.
-// location.href = $( event.target ).attr( "href" );
- 
-// }
-// );
+(function(document,navigator,standalone) {
+			// prevents links from apps from oppening in mobile safari
+			// this javascript must be the first script in your <head>
+			if ((standalone in navigator) && navigator[standalone]) {
+				var curnode, location=document.location, stop=/^(a|html)$/i;
+				document.addEventListener('click', function(e) {
+					curnode=e.target;
+					while (!(stop).test(curnode.nodeName)) {
+						curnode=curnode.parentNode;
+					}
+					// Condidions to do this only on links to your own app
+					// if you want all links, use if('href' in curnode) instead.
+					if('href' in curnode && ( curnode.href.indexOf('http') || ~curnode.href.indexOf(location.host) ) ) {
+						e.preventDefault();
+						location.href = curnode.href;
+					}
+				},false);
+			}
+		})(document,window.navigator,'standalone');
