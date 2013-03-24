@@ -1,5 +1,4 @@
 :erb
-	<% javascript "welcome" %>
 	<% provide(:bodyclass, "index") %>
 
 #welcome
@@ -7,3 +6,4 @@
 
 :javascript
 	$("#title").fitText();
+	setTimeout('window.location.href="home/"', 1000);

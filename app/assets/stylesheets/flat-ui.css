@@ -688,8 +688,12 @@ h6 {
     .dk_open .dk_toggle .select-icon {
       background-color: #16a085;
       border-left-color: transparent; }
+  .dk_open .dk_options {
+    display: block;
+  }
 
 .dk_options {
+  display: none;
   padding-top: 14px; }
   .dk_options:before {
     content: "";
@@ -761,13 +765,7 @@ h6 {
   left: 0;
   opacity: 0;
   width: 220px;
-  z-index: -100;
-  display: none\9;
-  -webkit-transition: 0.3s ease-out;
-  -moz-transition: 0.3s ease-out;
-  -o-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
-  -webkit-backface-visibility: hidden; }
+  display: none\9; }
   .select-right .dk_options {
     left: auto;
     right: 0; }

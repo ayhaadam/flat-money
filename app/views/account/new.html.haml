@@ -1,0 +1,27 @@
+:erb
+	<% provide(:bodyclass, "account-new") %>
+
+.container-fluid.animated.fadeInDown
+	#header.clearfix
+		新增帳戶
+		.pull-left
+			= link_to "Cancle", account_index_path , { :class => "btn btn-mini btn-info" }
+	%form
+		.control-group
+			%input{ :type => "text", :placeholder => "帳戶名稱" }
+
+		.control-group
+			%select
+				%option 帳戶種類
+				%option 現金
+				%option 信用卡
+				%option 銀行帳戶
+				%option 電子貨幣
+
+		.control-group
+			%input{ :type => "text", :pattern => "\\d*", :placeholder => "帳戶餘額" }
+
+		%a.btn.btn-primary.btn-large.btn-block 新增
+
+:javascript
+	$("select").dropkick();

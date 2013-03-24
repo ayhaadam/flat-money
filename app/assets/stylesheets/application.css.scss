@@ -15,6 +15,7 @@
  *= require_self
  */
 
+@import "bourbon";
 
 $grey: #BDC3C7;
 $yellow: #F1C40F;
@@ -22,20 +23,21 @@ $green: #2ECC71;
 $bgreen: #1ABC9C;
 $blue: #3498DB;
 
-@media (max-width: 767px) {
-
-body {
-	padding: 0;
-}
-
-body.expense {
-	background-color: $green;
-}
-
-}
-
 body {
 	font-family: Lato;
+}
+
+@media (max-width: 767px) {
+
+	body {
+		padding: 0;
+	}
+
+	body.account,
+	body.account-new {
+		background-color: $green;
+	}
+
 }
 
 body.index {
@@ -126,6 +128,27 @@ body.account {
 			background-color: rgba(0, 0, 0, 0.1);
 			font-size: 14px;
 		}
+		li.type-cash,
+		li.type-credit-card,
+		li.type-bank,
+		li.type-emoney {
+			padding-left: 70px;
+			background-size: 50px;
+			background-repeat: no-repeat;
+			background-position: 10px center;
+		}
+		li.type-cash {
+			background-image: url("account/type-cash.svg");
+		}
+		li.type-credit-card {
+			background-image: url("account/type-credit-card.svg");
+		}
+		li.type-bank {
+			background-image: url("account/type-bank.svg");
+		}
+		li.type-emoney {
+			background-image: url("account/type-emoney.svg");
+		}
 	}
 }
 
@@ -136,7 +159,26 @@ body.account-new {
 	form {
 		padding: 20px;
 		input[type="text"] {
-			width: 95%;
+			width: 96%;
+		}
+		.dk_container {
+			width: 100%;
+			border: 2px solid #dce4ec;
+			border-radius: 6px;
+			.dk_toggle {
+				background-color: white;
+				color: $grey;
+				border-radius: 4px;
+			}
+			.select-icon {
+				display: none;
+			}
+			.dk_options {
+				width: 100%;
+			}
+		}
+		.dk_open {
+			border-color: #1abc9c;
 		}
 	}
 }

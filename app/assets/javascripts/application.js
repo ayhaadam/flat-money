@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.fittext.js
+//= require jquery.dropkick
 
 window.addEventListener('load', function() {
     new FastClick(document.body);
@@ -20,7 +21,7 @@ window.addEventListener('load', function() {
 
 $( document ).on(
 "click",
-"a",
+"a[href]",
 function( event ){
  
 // Stop the default behavior of the browser, which
