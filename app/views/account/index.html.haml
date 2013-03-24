@@ -9,28 +9,39 @@
 		.pull-right
 			= link_to "Add", new_account_path , { :class => "btn btn-mini btn-info" }
 	%ul
-		%li.type-title 現金
-		%a
-			%li.type-cash 
-				現金
-				.pull-right $1,000
-		%li.type-title信用卡
-		%a
-			%li.type-credit-card
-				兆豐
-				.pull-right $1,000
-		%li.type-title 銀行帳戶
-		%a
-			%li.type-bank
-				玉山銀行
-				.pull-right $1,000
-		%a
-			%li.type-bank
-				兆豐銀行
-				.pull-right $1,000
-		%li.type-title 電子貨幣
-		%a
-			%li.type-emoney
-				悠游卡
-				.pull-right $1,000
-
+		-if @cash_accounts.count > 0
+			%li.type-title 現金
+			- @cash_accounts.each do |cash|
+				%a{ :href => edit_account_path(cash.id) }
+					%li.type-cash
+						=cash.name
+						.pull-right
+							$
+							=cash.balance
+		-if @credit_card_accounts.count > 0
+			%li.type-title 銀行帳戶
+			- @credit_card_accounts.each do |credit_card|
+				%a{ :href => edit_account_path(credit_card.id) }
+					%li.type-credit_card
+						=credit_card.name
+						.pull-right
+							$
+							=credit_card.balance
+		-if @bank_accounts.count > 0
+			%li.type-title 現金
+			- @bank_accounts.each do |bank|
+				%a{ :href => edit_account_path(bank.id) }
+					%li.type-bank
+						=bank.name
+						.pull-right
+							$
+							=bank.balance
+		-if @emoney_accounts.count > 0
+			%li.type-title 現金
+			- @emoney_accounts.each do |emoney|
+				%a{ :href => edit_account_path(emoney.id) }
+					%li.type-emoney
+						=emoney.name
+						.pull-right
+							$
+							=emoney.balance

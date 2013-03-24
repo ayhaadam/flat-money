@@ -19,18 +19,18 @@ window.addEventListener('load', function() {
     new FastClick(document.body);
 }, false);
 
-$( document ).on(
-"click",
-"a[href]",
-function( event ){
+// $( document ).on(
+// "click",
+// "a[href]",
+// function( event ){
  
-// Stop the default behavior of the browser, which
-// is to change the URL of the page.
-event.preventDefault();
+// // Stop the default behavior of the browser, which
+// // is to change the URL of the page.
+// event.preventDefault();
  
-// Manually change the location of the page to stay in
-// "Standalone" mode and change the URL at the same time.
-location.href = $( event.target ).attr( "href" );
+// // Manually change the location of the page to stay in
+// // "Standalone" mode and change the URL at the same time.
+// location.href = $( event.target ).attr( "href" );
  
-}
-);
+// }
+// );

@@ -1,0 +1,42 @@
+:erb
+	<% provide(:bodyclass, "account-edit") %>
+
+.container-fluid.animated.fadeInDown
+	#header.clearfix
+		新增帳戶
+		.pull-left
+			= link_to "Cancle", account_index_path , { :class => "btn btn-mini btn-info" }
+	%form
+		.control-group
+			%input{ :type => "text", :placeholder => "帳戶名稱", :value => @account.name }
+
+		.control-group
+			%select
+				%option 帳戶種類
+				-if @account.account_type == "cash"
+					%option{ :selected => "selected", :value => "cash" } 現金
+				-else
+					%option{ :value => "cash" } 現金
+				-if @account.account_type == "credit_card"
+					%option{ :selected => "selected", :value => "credit_card" } 信用卡
+				-else
+					%option{ :value => "credit_card" } 信用卡
+				-if @account.account_type == "bank"
+					%option{ :selected => "selected", :value => "bank" } 銀行帳戶
+				-else
+					%option{ :value => "bank" } 銀行帳戶
+				-if @account.account_type == "emoney"
+					%option{ :selected => "selected", :value => "emoney" } 電子貨幣
+				-else
+					%option{ :value => "emoney" } 電子貨幣
+
+		.control-group
+			%input{ :type => "text", :pattern => "\\d*", :placeholder => "帳戶餘額", :value => @account.balance }
+
+		.control-group
+			%textarea= @account.description
+
+		%a.btn.btn-primary.btn-large.btn-block 儲存
+
+:javascript
+	$("select").dropkick();

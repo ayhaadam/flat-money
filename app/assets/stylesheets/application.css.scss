@@ -34,7 +34,8 @@ body {
 	}
 
 	body.account,
-	body.account-new {
+	body.account-new,
+	body.account-edit {
 		background-color: $green;
 	}
 
@@ -149,10 +150,14 @@ body.account {
 		li.type-emoney {
 			background-image: url("account/type-emoney.svg");
 		}
+		li.nil {
+			text-align: center;
+		}
 	}
 }
 
-body.account-new {
+body.account-new,
+body.account-edit, {
 	.container-fluid {
 		background-color: $green;
 	}
@@ -179,6 +184,10 @@ body.account-new {
 		}
 		.dk_open {
 			border-color: #1abc9c;
+		}
+		textarea {
+			width: 96%;
+			height: 100px;
 		}
 	}
 }
