@@ -28,7 +28,7 @@
 				Credit Card
 				%span.pull-right
 					$
-					= @redit_card_sum
+					= @credit_card_sum
 			- @credit_card_accounts.each do |credit_card|
 				%a{ :href => edit_account_path(credit_card.id) }
 					%li.type-credit-card

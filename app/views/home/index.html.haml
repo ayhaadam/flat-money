@@ -1,12 +1,17 @@
 :erb
-  <% provide(:bodyclass, "home") %>
+	<% provide(:bodyclass, "home") %>
 
 .container-fluid.animated.fadeInDown
-  #header-home Balance $12,345
-  %ul#tool
-    %li#expense
-      = link_to "新增支出", expense_index_path
-    %li#account
-      = link_to "帳戶總覽", account_index_path
-    %li#income
-      = link_to "帳戶總覽", "account_index_path"
+	#header-home 
+		Balance $12,345
+		- if user_signed_in?
+			.pull-left
+				= link_to raw("<i class='icon-arrow_doubled_left'></i>"), destroy_user_session_path, :method => :delete, :class => "btn btn-mini btn-info" 
+
+	%ul#tool
+		%li#expense
+			= link_to "新增支出", expense_index_path
+		%li#account
+			= link_to "帳戶總覽", account_index_path
+		%li#income
+			= link_to "帳戶總覽", "account_index_path"
