@@ -5,8 +5,8 @@
 	#header-home 
 		Balance $12,345
 		- if user_signed_in?
-			.pull-left
-				= link_to raw("<i class='icon-arrow_doubled_left'></i>"), destroy_user_session_path, :method => :delete, :class => "btn btn-mini btn-info" 
+			.pull-right
+				= link_to raw("<i class='icon-signout'></i>"), destroy_user_session_path, :method => :delete, :class => "btn btn-mini btn-info" 
 
 	%ul#tool
 		%li#expense
