@@ -3,45 +3,66 @@
 
 .container-fluid.animated.fadeInDown
 	#header.classfix
-		帳戶總覽
+		Accounts
 		.pull-left
-			= link_to "Back", home_index_path , { :class => "btn btn-mini btn-info" }
+			= link_to raw("<i class='icon-arrow_doubled_left'></i>"), home_index_path , { :class => "btn btn-mini btn-info" }
 		.pull-right
-			= link_to "Add", new_account_path , { :class => "btn btn-mini btn-info" }
+			= link_to raw("<i class='icon-plus'></i>"), new_account_path , { :class => "btn btn-mini btn-info" }
 	%ul
 		-if @cash_accounts.count > 0
-			%li.type-title 現金
+			%li.type-title 
+				Cash
+				%span.pull-right
+					$
+					= @cash_sum
 			- @cash_accounts.each do |cash|
 				%a{ :href => edit_account_path(cash.id) }
 					%li.type-cash
-						=cash.name
-						.pull-right
+						%i.icon-chevron_right.pull-right.icon2x
+						%span.title= cash.name
+						%span.balance
 							$
-							=cash.balance
+							= cash.balance
 		-if @credit_card_accounts.count > 0
-			%li.type-title 銀行帳戶
+			%li.type-title
+				Credit Card
+				%span.pull-right
+					$
+					= @redit_card_sum
 			- @credit_card_accounts.each do |credit_card|
 				%a{ :href => edit_account_path(credit_card.id) }
 					%li.type-credit-card
-						=credit_card.name
-						.pull-right
+						%i.icon-chevron_right.pull-right.icon2x
+						%span.title= credit_card.name
+						%span.balance
 							$
-							=credit_card.balance
+							= credit_card.balance
 		-if @bank_accounts.count > 0
-			%li.type-title 現金
+			%li.type-title
+				Bank Account
+				%span.pull-right
+					$
+					= @bank_sum
 			- @bank_accounts.each do |bank|
 				%a{ :href => edit_account_path(bank.id) }
 					%li.type-bank
-						=bank.name
-						.pull-right
+						%i.icon-chevron_right.pull-right.icon2x
+						%span.title= bank.name
+						%span.balance
 							$
-							=bank.balance
+							= bank.balance
 		-if @emoney_accounts.count > 0
-			%li.type-title 現金
+			%li.type-title
+				Electronic Money
+				%span.pull-right
+					$
+					= @emoney_sum
 			- @emoney_accounts.each do |emoney|
 				%a{ :href => edit_account_path(emoney.id) }
 					%li.type-emoney
-						=emoney.name
-						.pull-right
+						%i.icon-chevron_right.pull-right.icon2x
+						%span.title= emoney.name
+						%span.balance
 							$
-							=emoney.balance
+							= emoney.balance
+	%p= @uid

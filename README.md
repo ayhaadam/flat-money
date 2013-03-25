@@ -7,3 +7,4 @@
 - Ruby on Rails
 - [Devise](https://github.com/plataformatec/devise)
 - [Flat UI](http://designmodo.com/demo/flat-ui/)
+- [FastClick](https://github.com/ftlabs/fastclick)

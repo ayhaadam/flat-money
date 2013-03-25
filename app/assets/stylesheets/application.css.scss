@@ -13,18 +13,24 @@
  *= require flat-ui
  *= require animate
  *= require_self
+ *= require mfglabs_iconset
  */
 
 @import "bourbon";
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 $grey: #BDC3C7;
 $yellow: #F1C40F;
 $green: #2ECC71;
 $bgreen: #1ABC9C;
 $blue: #3498DB;
+$light-yellow: #fdf6e3;
+$text-blue: #3A3A46;
+$bg-blue: #34495E;
 
-body {
-	font-family: Lato;
+body,
+.btn {
+	font-family: 'Montserrat', sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -42,23 +48,29 @@ body {
 }
 
 body.index {
-	background-color: $grey;
+	background-color: $blue;
 }
 
-#welcome {
-	color: white;
-	text-align: center;
-	margin-top: 200px;
+#icon {
+	text-indent: -999em;
+	background-image: url("flat-money-icon.svg");
+	background-size: 100%;
+	height: 200px;
+	background-repeat: no-repeat;
+	max-width: 250px;
+	margin: 150px auto;
 }
 
 body.home {
 	#header-home {
-		padding: 10px;
 		background-color: $blue;
-		color: white;
+		color: $text-blue;
 		text-align: center;
-		font-weight: bold;
 		border-bottom: 1px solid darken($blue, 10%);
+		font-size: 20px;
+		line-height: 38px;
+		height: 38px;
+		padding: 0 10px;
 	}
 	ul {
 		list-style: none;
@@ -99,12 +111,23 @@ body.home {
 
 .container-fluid {
 	#header {
-		padding: 10px;
 		background-color: $blue;
-		color: white;
+		color: $text-blue;
 		text-align: center;
-		font-weight: bold;
 		border-bottom: 1px solid darken($blue, 10%);
+		font-size: 20px;
+		line-height: 38px;
+		height: 38px;
+		padding: 0 10px;
+		.btn {
+			margin-top: -3px;
+		}
+	}
+	.form-actions {
+		background: 0;
+		clear: both;
+		border: 0;
+		padding: 20px 0 0 0;
 	}
 }
 
@@ -120,8 +143,7 @@ body.account {
 			text-decoration: none;
 		}
 		li {
-			padding: 20px 10px;
-			font-size: 18px;
+			color: white;
 		}
 		li.type-title {
 			padding: 3px 10px;
@@ -133,10 +155,33 @@ body.account {
 		li.type-credit-card,
 		li.type-bank,
 		li.type-emoney {
-			padding-left: 70px;
+			padding: 20px 20px 20px 90px;
 			background-size: 50px;
 			background-repeat: no-repeat;
-			background-position: 10px center;
+			background-position: 20px center;
+			.title {
+				display: block;
+				max-width: 200px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				font-size: 22px;
+				font-weight: bold;
+				line-height: 26px;
+			}
+			.balance {
+				display: block;
+				max-width: 200px;
+				max-height: 20px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				font-size: 14px;
+				color: rgba(255, 255, 255, 0.5);
+			}
+			.pull-right {
+				margin-top: 14px;
+			}
 		}
 		li.type-cash {
 			background-image: url("account/type-cash.svg");
@@ -186,6 +231,7 @@ body.account-edit, {
 			}
 			.dk_options {
 				width: 100%;
+				padding-left: 2px;
 			}
 		}
 		.dk_open {

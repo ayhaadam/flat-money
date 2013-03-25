@@ -3,9 +3,9 @@
 
 .container-fluid.animated.fadeInDown
 	#header.clearfix
-		新增帳戶
+		New Account
 		.pull-left
-			= link_to "Cancle", account_index_path , { :class => "btn btn-mini btn-info" }
+			= link_to raw("<i class='icon-arrow_doubled_left'></i>"), account_index_path , { :class => "btn btn-mini btn-info" }
 
 	- if @account.errors.any?
 		%ul#error
@@ -13,19 +13,27 @@
 				%li= msg
 
 	= form_for @account, :url => { :action => "create" } do |f|
-		.control-group= f.select( :account_type , [["帳戶類型", ""],["現金", "cash"], ["信用卡", "credit_card"], ["銀行帳戶", "bank"], ["電子貨幣", "emoney"]])
-		.control-group= f.text_field :name, :placeholder => "帳戶名稱"
-		.control-group= f.text_field :balance, :placeholder => "帳戶餘額", :pattern => "\\d*"
+		.control-group
+			= f.label :account_type
+			= f.select( :account_type , [["Choose One ...", ""],["Cash", "cash"], ["Credit Card", "credit_card"], ["Bank Account", "bank"], ["Electronic Money", "emoney"]])
+		.control-group
+			= f.label :name, "Account Name"
+			= f.text_field :name, :placeholder => "Cash, Bank Name ..."
+		.control-group
+			= f.label :balance, "Account Balance"
+			= f.text_field :balance, :placeholder => "$", :pattern => "\\d*"
 		.control-group
 			%span.pull-left.for-toggle
-				列為存款？
+				For Saving?
 			.pull-right	
 				.toggle.toggle-icon.toggle-off
-					%label.toggle-radio.fui-checkmark-16{ :for => "account_not_count_1" }
+					%label.toggle-radio{ :for => "account_not_count_1" }
+						%i.icon-check
 					= f.radio_button :not_count, 1
-					%label.toggle-radio.fui-cross-16{ :for => "account_not_count_0" }
+					%label.toggle-radio{ :for => "account_not_count_0" }
+						%i.icon-cross_mark
 					= f.radio_button :not_count, 0, :checked => "checked"
-		.control-group= f.submit "送出", :class => "btn btn-primary btn-large btn-block"
+		.form-actions= f.submit "Submit", :class => "btn btn-info btn-large btn-block"
 
 :javascript
 	$("select").dropkick();
