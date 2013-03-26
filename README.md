@@ -5,6 +5,7 @@
 ### 使用了
 
 - Ruby on Rails
+- [Bootstrap](http://twitter.github.com/bootstrap/)
 - [Devise](https://github.com/plataformatec/devise)
 - [Flat UI](http://designmodo.com/demo/flat-ui/)
 - [FastClick](https://github.com/ftlabs/fastclick)
