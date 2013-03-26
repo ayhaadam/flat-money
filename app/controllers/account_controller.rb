@@ -3,15 +3,6 @@ class AccountController < ApplicationController
 	def index
 		@all_user_accounts = Account.where(:user_id => current_user.id)
 
-		@credit_card_accounts = @all_user_accounts.where( :account_type => "credit_card" )
-		@credit_card_sum = @credit_card_accounts.sum("balance")
-		
-		@bank_accounts = @all_user_accounts.where( :account_type => "bank" )
-		@bank_sum = @bank_accounts.sum("balance")
-		
-		@emoney_accounts = @all_user_accounts.where( :account_type => "emoney" )
-		@emoney_sum = @emoney_accounts.sum("balance")
-
 		@uid = current_user.id
 	end
 	def new
