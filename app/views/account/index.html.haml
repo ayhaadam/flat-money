@@ -23,13 +23,13 @@
 						%span.balance
 							$
 							= cash.balance
-		-if @credit_card_accounts.count > 0
+		-if @all_user_accounts.credit_card.count > 0
 			%li.type-title
 				Credit Card
 				%span.pull-right
 					$
-					= @credit_card_sum
-			- @credit_card_accounts.each do |credit_card|
+					= @all_user_accounts.credit_card.sum("balance")
+			- @all_user_accounts.credit_card.each do |credit_card|
 				%a{ :href => edit_account_path(credit_card.id) }
 					%li.type-credit-card
 						%i.icon-chevron_right.pull-right.icon2x
@@ -37,13 +37,13 @@
 						%span.balance
 							$
 							= credit_card.balance
-		-if @bank_accounts.count > 0
+		-if @all_user_accounts.bank.count > 0
 			%li.type-title
 				Bank Account
 				%span.pull-right
 					$
-					= @bank_sum
-			- @bank_accounts.each do |bank|
+					= @all_user_accounts.bank.sum("balance")
+			- @all_user_accounts.bank.each do |bank|
 				%a{ :href => edit_account_path(bank.id) }
 					%li.type-bank
 						%i.icon-chevron_right.pull-right.icon2x
@@ -51,13 +51,13 @@
 						%span.balance
 							$
 							= bank.balance
-		-if @emoney_accounts.count > 0
+		-if @all_user_accounts.emoney.count > 0
 			%li.type-title
 				Electronic Money
 				%span.pull-right
 					$
-					= @emoney_sum
-			- @emoney_accounts.each do |emoney|
+					= @all_user_accounts.emoney.sum("balance")
+			- @all_user_accounts.emoney.each do |emoney|
 				%a{ :href => edit_account_path(emoney.id) }
 					%li.type-emoney
 						%i.icon-chevron_right.pull-right.icon2x
