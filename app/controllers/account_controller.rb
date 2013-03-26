@@ -2,8 +2,6 @@ class AccountController < ApplicationController
 	before_filter :authenticate_user!
 	def index
 		@all_user_accounts = Account.where(:user_id => current_user.id)
-		@cash_accounts = @all_user_accounts.where( :account_type => "cash" )
-		@cash_sum = @cash_accounts.sum("balance")
 
 		@credit_card_accounts = @all_user_accounts.where( :account_type => "credit_card" )
 		@credit_card_sum = @credit_card_accounts.sum("balance")

@@ -9,13 +9,13 @@
 		.pull-right
 			= link_to raw("<i class='icon-plus'></i>"), new_account_path , { :class => "btn btn-mini btn-info" }
 	%ul
-		-if @cash_accounts.count > 0
+		-if @all_user_accounts.cash.count > 0
 			%li.type-title 
 				Cash
 				%span.pull-right
 					$
-					= @cash_sum
-			- @cash_accounts.each do |cash|
+					= @all_user_accounts.cash.sum("balance")
+			- @all_user_accounts.cash.each do |cash|
 				%a{ :href => edit_account_path(cash.id) }
 					%li.type-cash
 						%i.icon-chevron_right.pull-right.icon2x
