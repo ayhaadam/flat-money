@@ -39,16 +39,85 @@ body,
 		padding: 0;
 	}
 
+	body.sign-in,
+	body.sign-up {
+		background-color: $grey;
+	}
+
 	body.account,
 	body.account-new,
 	body.account-edit {
 		background-color: $green;
 	}
 
+
 }
 
-body.index {
-	background-color: $blue;
+.container-fluid {
+	#header {
+		background-color: $blue;
+		color: $text-blue;
+		text-align: center;
+		border-bottom: 1px solid darken($blue, 10%);
+		font-size: 20px;
+		line-height: 38px;
+		height: 38px;
+		padding: 0 10px;
+		.btn {
+			margin-top: -3px;
+		}
+	}
+	form {
+		padding: 20px;
+		input[type="text"],
+		input[type="email"],
+		input[type="password"] {
+			width: 96%;
+		}
+		.dk_container {
+			width: 100%;
+			border: 2px solid #dce4ec;
+			border-radius: 6px;
+			.dk_toggle {
+				background-color: white;
+				color: $grey;
+				border-radius: 4px;
+			}
+			.select-icon {
+				display: none;
+			}
+			.dk_options {
+				width: 100%;
+				padding-left: 2px;
+			}
+		}
+		.dk_open {
+			border-color: #1abc9c;
+		}
+		textarea {
+			width: 96%;
+			height: 100px;
+		}
+		span.for-toggle {
+			line-height: 29px;
+		}
+		.toggle {
+			margin-right: 0;
+		}
+		.btn-group.for2 {
+			width: 100%;
+			.btn {
+				width: 50%;
+				box-sizing: border-box;
+			}
+		}
+	}
+	.form-actions {
+		background: 0;
+		clear: both;
+		border: 0;
+		padding: 20px 0 0 0;
+	}
 }
 
 #icon {
@@ -59,6 +128,10 @@ body.index {
 	background-repeat: no-repeat;
 	max-width: 250px;
 	margin: 150px auto;
+}
+
+body.index {
+	background-color: $grey;
 }
 
 body.home {
@@ -109,25 +182,15 @@ body.home {
 	}
 }
 
-.container-fluid {
-	#header {
-		background-color: $blue;
-		color: $text-blue;
-		text-align: center;
-		border-bottom: 1px solid darken($blue, 10%);
-		font-size: 20px;
-		line-height: 38px;
-		height: 38px;
-		padding: 0 10px;
-		.btn {
-			margin-top: -3px;
-		}
+
+body.sign-in,
+body.sign-up {
+	.container-fluid {
+		background-color: $grey;
 	}
-	.form-actions {
-		background: 0;
-		clear: both;
-		border: 0;
-		padding: 20px 0 0 0;
+	h1 {
+		text-align: center;
+		padding: 50px 0;
 	}
 }
 
@@ -211,42 +274,6 @@ body.account-edit, {
 		margin-top: 15px;
 		list-style: none;
 		text-align: center;
-	}
-	form {
-		padding: 20px;
-		input[type="text"] {
-			width: 96%;
-		}
-		.dk_container {
-			width: 100%;
-			border: 2px solid #dce4ec;
-			border-radius: 6px;
-			.dk_toggle {
-				background-color: white;
-				color: $grey;
-				border-radius: 4px;
-			}
-			.select-icon {
-				display: none;
-			}
-			.dk_options {
-				width: 100%;
-				padding-left: 2px;
-			}
-		}
-		.dk_open {
-			border-color: #1abc9c;
-		}
-		textarea {
-			width: 96%;
-			height: 100px;
-		}
-		span.for-toggle {
-			line-height: 29px;
-		}
-		.toggle {
-			margin-right: 0;
-		}
 	}
 }
 
